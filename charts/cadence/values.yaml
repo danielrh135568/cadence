@@ -149,7 +149,7 @@ server:
 
     persistence:
       default:
-        driver: "sql" # cassandra or sql
+        driver: "" # cassandra or sql
 
         cassandra:
           hosts: []
@@ -166,12 +166,12 @@ server:
           # protoVersion: 4
 
         sql:
-          pluginName: "mysql" # mysql
-          host: "mysql-symphony.c6418zenspuo.us-east-2.rds.amazonaws.com"
-          port: 3306
+          pluginName: "" # mysql
+          host: ""
+          # port: 3306
           database: cadence
-          user: "cadence"
-          password: "Admin2022"
+          user: ""
+          password: ""
           existingSecret: ""
           # maxConns: 20
           # maxIdleConns: 20
@@ -180,13 +180,13 @@ server:
             # tx_isolation: "READ-COMMITTED"
 
       visibility:
-        driver: "sql" # cassandra or sql
+        driver: "" # cassandra or sql
 
         cassandra:
           hosts: []
           # port: 9042
           keyspace: cadence_visibility
-          user: "cadence"
+          user: ""
           password: ""
           existingSecret: ""
           consistency: One
@@ -197,12 +197,12 @@ server:
           # protoVersion: 4
 
         sql:
-          pluginName: "mysql" # mysql
-          host: "mysql-symphony.c6418zenspuo.us-east-2.rds.amazonaws.com"
-          port: 3306
+          pluginName: "" # mysql
+          host: ""
+          # port: 3306
           database: cadence_visibility
-          user: "cadence"
-          password: "Admin2022"
+          user: ""
+          password: ""
           existingSecret: ""
           # maxConns: 20
           # maxIdleConns: 20
@@ -377,14 +377,14 @@ dynamicConfig:
 
 schema:
   setup:
-    enabled: false
+    enabled: true
     backoffLimit: 100
   update:
     enabled: true
     backoffLimit: 100
 
 cassandra:
-  enabled: false
+  enabled: true
   image:
     repo: cassandra
     tag: 3.11.3
@@ -396,11 +396,10 @@ cassandra:
 
 mysql:
   enabled: false
-  imageTag: "5.7.37"
+  imageTag: "5.7.26"
   service:
     port: 3306
   mysqlUser: cadence
   initializationFiles:
     user.sql: |-
       GRANT ALL PRIVILEGES ON *.* TO 'cadence'@'%';
-
