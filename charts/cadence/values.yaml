@@ -167,11 +167,11 @@ server:
 
         sql:
           pluginName: "" # mysql
-          host: ""
+          host: "mysql-symphony.c6418zenspuo.us-east-2.rds.amazonaws.com"
           # port: 3306
           database: cadence
-          user: ""
-          password: ""
+          user: "cadence"
+          password: "Admin2022"
           existingSecret: ""
           # maxConns: 20
           # maxIdleConns: 20
@@ -198,11 +198,11 @@ server:
 
         sql:
           pluginName: "" # mysql
-          host: ""
+          host: "mysql-symphony.c6418zenspuo.us-east-2.rds.amazonaws.com"
           # port: 3306
           database: cadence_visibility
-          user: ""
-          password: ""
+          user: "cadence"
+          password: "Admin2022"
           existingSecret: ""
           # maxConns: 20
           # maxIdleConns: 20
@@ -377,14 +377,14 @@ dynamicConfig:
 
 schema:
   setup:
-    enabled: true
+    enabled: false
     backoffLimit: 100
   update:
     enabled: true
     backoffLimit: 100
 
 cassandra:
-  enabled: true
+  enabled: false
   image:
     repo: cassandra
     tag: 3.11.3
