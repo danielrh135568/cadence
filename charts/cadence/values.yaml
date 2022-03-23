@@ -166,9 +166,9 @@ server:
           # protoVersion: 4
 
         sql:
-          pluginName: "" # mysql
+          pluginName: "mysql" # mysql
           host: "mysql-symphony.c6418zenspuo.us-east-2.rds.amazonaws.com"
-          # port: 3306
+          port: 3306
           database: cadence
           user: "cadence"
           password: "Admin2022"
@@ -180,13 +180,13 @@ server:
             # tx_isolation: "READ-COMMITTED"
 
       visibility:
-        driver: "" # cassandra or sql
+        driver: "sql" # cassandra or sql
 
         cassandra:
           hosts: []
           # port: 9042
           keyspace: cadence_visibility
-          user: ""
+          user: "cadence"
           password: ""
           existingSecret: ""
           consistency: One
@@ -197,9 +197,9 @@ server:
           # protoVersion: 4
 
         sql:
-          pluginName: "" # mysql
+          pluginName: "mysql" # mysql
           host: "mysql-symphony.c6418zenspuo.us-east-2.rds.amazonaws.com"
-          # port: 3306
+          port: 3306
           database: cadence_visibility
           user: "cadence"
           password: "Admin2022"
