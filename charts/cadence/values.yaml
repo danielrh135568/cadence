@@ -149,7 +149,7 @@ server:
 
     persistence:
       default:
-        driver: "" # cassandra or sql
+        driver: "sql" # cassandra or sql
 
         cassandra:
           hosts: []
